@@ -149,6 +149,102 @@
             text-decoration: none;
             display: inline-block;
             margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        /* --- CONTACT POPUP --- */
+        .contact-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 46, 76, 0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .contact-modal-overlay.is-open {
+            display: flex;
+        }
+
+        .contact-modal {
+            background: var(--cream);
+            border: 2px solid var(--dark-blue);
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 15px 15px 0 var(--slate-blue);
+        }
+
+        .contact-modal h3 {
+            color: var(--burgundy);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: var(--white);
+            border: 1px solid rgba(2, 46, 76, 0.15);
+            text-decoration: none;
+            color: var(--dark-blue);
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .contact-option:hover {
+            box-shadow: 5px 5px 0 var(--slate-blue);
+            transform: translateY(-2px);
+        }
+
+        .contact-option strong {
+            min-width: 70px;
+            color: var(--burgundy);
+        }
+
+        .contact-modal-close {
+            display: block;
+            margin-top: 1.5rem;
+            padding: 10px 20px;
+            background: var(--dark-blue);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        .contact-modal-close:hover {
+            background: var(--slate-blue);
+        }
+
+        .contact-trigger {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font: inherit;
+            color: inherit;
+            padding: 0;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact-trigger.nav-link-style {
+            color: var(--dark-blue);
+        }
+
+        .footer .contact-btn {
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -165,7 +261,7 @@
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
-            <a href="mailto:phamanhphuong17@gmail.com">Contact</a>
+            <button type="button" class="contact-trigger nav-link-style" data-open-contact>Contact</button>
         </div>
     </nav>
 
@@ -233,8 +329,61 @@
         <h2 class="retro-font">Let's Connect</h2>
         <p>Currently based in Manchester, United Kingdom</p>
         <p>Fluent in English & Vietnamese</p>
-        <a href="mailto:phamanhphuong17@gmail.com" class="contact-btn">Email Frances</a>
+        <button type="button" class="contact-btn" data-open-contact>Email Frances</button>
     </footer>
+
+    <!-- Contact popup -->
+    <div class="contact-modal-overlay" id="contact-modal" aria-hidden="true">
+        <div class="contact-modal" role="dialog" aria-labelledby="contact-modal-title">
+            <h3 id="contact-modal-title" class="retro-font">Get in touch</h3>
+            <a href="mailto:phamanhphuong17@gmail.com" class="contact-option">
+                <strong>Email:</strong>
+                <span>phamanhphuong17@gmail.com</span>
+            </a>
+            <a href="tel:+447401673183" class="contact-option">
+                <strong>Number:</strong>
+                <span>+44(0)7401673183</span>
+            </a>
+            <button type="button" class="contact-modal-close" data-close-contact>Close</button>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var overlay = document.getElementById('contact-modal');
+            var openButtons = document.querySelectorAll('[data-open-contact]');
+            var closeBtn = document.querySelector('[data-close-contact]');
+
+            function openModal() {
+                overlay.classList.add('is-open');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                overlay.classList.remove('is-open');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            openButtons.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
+
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeModal();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+            });
+        })();
+    </script>
 
 </body>
 </html>
