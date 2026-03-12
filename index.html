@@ -42,10 +42,7 @@
             align-items: center;
             padding: 2rem 0;
             border-bottom: 1px solid var(--dark-blue);
-        }
-
-        .nav-links {
-            margin-left: auto;
+            gap: 2rem;
         }
 
         .logo {
@@ -62,13 +59,12 @@
         }
 
         .cv-nav-link {
-            margin-left: 2rem;
-            padding: 0.4rem 1.1rem;
+            padding: 0.55rem 1.4rem;
             border-radius: 999px;
             border: 1px solid var(--burgundy);
             background-color: var(--burgundy);
             color: var(--white);
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: bold;
             cursor: pointer;
             font-family: inherit;
@@ -379,12 +375,12 @@
 <body>
 
     <nav>
+        <button type="button" class="cv-nav-link" data-open-cv>View My CV</button>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
             <button type="button" class="contact-trigger nav-link-style" data-open-contact>Contact</button>
-            <button type="button" class="cv-nav-link" data-open-cv>View My CV</button>
         </div>
     </nav>
 
