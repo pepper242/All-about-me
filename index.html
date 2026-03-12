@@ -287,11 +287,10 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(2, 46, 76, 0.55);
+            background: rgba(2, 46, 76, 0.65);
             z-index: 1100;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
+            align-items: stretch;
+            justify-content: stretch;
         }
 
         .cv-modal-overlay.is-open {
@@ -300,11 +299,10 @@
 
         .cv-modal {
             background: var(--cream);
-            border: 2px solid var(--dark-blue);
-            box-shadow: 16px 16px 0 rgba(2, 46, 76, 0.6);
-            max-width: 960px;
+            border-top: 2px solid var(--dark-blue);
+            border-bottom: 2px solid var(--dark-blue);
             width: 100%;
-            max-height: 90vh;
+            height: 100%;
             display: flex;
             flex-direction: column;
         }
@@ -351,9 +349,6 @@
         @media (max-width: 768px) {
             header, .skills-section { grid-template-columns: 1fr; }
             .hero-text h1 { font-size: 3rem; }
-            .cv-modal {
-                box-shadow: 8px 8px 0 rgba(2, 46, 76, 0.6);
-            }
         }
     </style>
 </head>
