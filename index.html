@@ -440,6 +440,19 @@
         <button type="button" class="contact-btn" data-open-contact>Email Frances</button>
     </footer>
 
+    <!-- CV modal -->
+    <div class="cv-modal-overlay" id="cv-modal" aria-hidden="true">
+        <div class="cv-modal" role="dialog" aria-labelledby="cv-modal-title">
+            <div class="cv-modal-header">
+                <div class="cv-modal-title" id="cv-modal-title">Frances Pham – Curriculum Vitae</div>
+                <button type="button" class="cv-modal-close" data-close-cv aria-label="Close CV viewer">×</button>
+            </div>
+            <div class="cv-modal-body">
+                <iframe id="cv-iframe" title="Frances Pham CV PDF viewer"></iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- Contact popup -->
     <div class="contact-modal-overlay" id="contact-modal" aria-hidden="true">
         <div class="contact-modal" role="dialog" aria-labelledby="contact-modal-title">
@@ -489,6 +502,60 @@
 
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+            });
+        })();
+    </script>
+
+    <script>
+        (function () {
+            var cvOverlay = document.getElementById('cv-modal');
+            var openCvBtn = document.querySelector('[data-open-cv]');
+            var closeCvBtn = document.querySelector('[data-close-cv]');
+            var cvIframe = document.getElementById('cv-iframe');
+
+            // Convert Google Drive "view" URL to embeddable preview URL
+            var pdfPreviewUrl = 'https://drive.google.com/file/d/1zHCVlh-caWn6olSF1HgqUSgCoEmqL5cW/preview';
+
+            function openCvModal() {
+                if (!cvOverlay) return;
+                if (cvIframe && !cvIframe.src) {
+                    cvIframe.src = pdfPreviewUrl;
+                }
+                cvOverlay.classList.add('is-open');
+                cvOverlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeCvModal() {
+                if (!cvOverlay) return;
+                cvOverlay.classList.remove('is-open');
+                cvOverlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            if (openCvBtn) {
+                openCvBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openCvModal();
+                });
+            }
+
+            if (closeCvBtn) {
+                closeCvBtn.addEventListener('click', function () {
+                    closeCvModal();
+                });
+            }
+
+            if (cvOverlay) {
+                cvOverlay.addEventListener('click', function (e) {
+                    if (e.target === cvOverlay) closeCvModal();
+                });
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && cvOverlay && cvOverlay.classList.contains('is-open')) {
+                    closeCvModal();
+                }
             });
         })();
     </script>
