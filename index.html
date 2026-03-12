@@ -57,31 +57,6 @@
             font-weight: bold;
         }
 
-        .cv-nav-link {
-            margin-left: 2rem;
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: #00ff73;
-            border: 1px solid #00ff73;
-            padding: 0.35rem 0.9rem;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            background: transparent;
-            cursor: pointer;
-        }
-
-        .cv-nav-link:hover {
-            background-color: #00ff73;
-            color: #000000;
-        }
-
-        .cv-nav-link-icon {
-            font-size: 0.8rem;
-        }
-
         /* --- HERO SECTION --- */
         header {
             padding: 100px 0;
@@ -289,83 +264,6 @@
             cursor: pointer;
         }
 
-        /* --- CV MODAL (PDF VIEWER) --- */
-        .cv-modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            z-index: 1200;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-        }
-
-        .cv-modal-overlay.is-open {
-            display: flex;
-        }
-
-        .cv-modal {
-            background: #05090f;
-            color: #f5f5f5;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7);
-            max-width: 960px;
-            width: 100%;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .cv-modal-header {
-            padding: 0.85rem 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        }
-
-        .cv-modal-title {
-            font-size: 0.95rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
-
-        .cv-modal-close {
-            background: transparent;
-            border: none;
-            color: #f5f5f5;
-            font-size: 1.1rem;
-            cursor: pointer;
-            padding: 0.15rem 0.4rem;
-            line-height: 1;
-        }
-
-        .cv-modal-close:hover {
-            color: #00ff73;
-        }
-
-        .cv-modal-body {
-            padding: 0.75rem 0.75rem 1rem;
-            overflow: auto;
-            background: #000;
-        }
-
-        #cv-pdf-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        #cv-pdf-container canvas {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
         @media (max-width: 768px) {
             header, .skills-section { grid-template-columns: 1fr; }
             .hero-text h1 { font-size: 3rem; }
@@ -380,9 +278,6 @@
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
-            <button type="button" class="cv-nav-link" data-open-cv>
-                View My CV <span class="cv-nav-link-icon">↗</span>
-            </button>
             <button type="button" class="contact-trigger nav-link-style" data-open-contact>Contact</button>
         </div>
     </nav>
@@ -457,19 +352,6 @@
         <button type="button" class="contact-btn" data-open-contact>Email Frances</button>
     </footer>
 
-    <!-- CV modal (PDF viewer) -->
-    <div class="cv-modal-overlay" id="cv-modal" aria-hidden="true">
-        <div class="cv-modal" role="dialog" aria-labelledby="cv-modal-title">
-            <div class="cv-modal-header">
-                <div class="cv-modal-title" id="cv-modal-title">Curriculum Vitae – Frances Pham</div>
-                <button type="button" class="cv-modal-close" data-close-cv aria-label="Close CV viewer">×</button>
-            </div>
-            <div class="cv-modal-body">
-                <div id="cv-pdf-container"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Contact popup -->
     <div class="contact-modal-overlay" id="contact-modal" aria-hidden="true">
         <div class="contact-modal" role="dialog" aria-labelledby="contact-modal-title">
@@ -485,9 +367,6 @@
             <button type="button" class="contact-modal-close" data-close-contact>Close</button>
         </div>
     </div>
-
-    <!-- PDF.js (Mozilla) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
     <script>
         (function () {
@@ -522,98 +401,6 @@
 
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
-            });
-        })();
-    </script>
-
-    <script>
-        (function () {
-            var cvOverlay = document.getElementById('cv-modal');
-            var openCvBtn = document.querySelector('[data-open-cv]');
-            var closeCvBtn = document.querySelector('[data-close-cv]');
-            var pdfContainer = document.getElementById('cv-pdf-container');
-            var pdfLoaded = false;
-            var pdfUrl = 'https://drive.google.com/file/d/1zHCVlh-caWn6olSF1HgqUSgCoEmqL5cW/view?usp=sharing';
-
-            if (window['pdfjsLib']) {
-                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-            }
-
-            function openCvModal() {
-                if (!cvOverlay) return;
-                cvOverlay.classList.add('is-open');
-                cvOverlay.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-
-                if (!pdfLoaded) {
-                    loadPdf();
-                    pdfLoaded = true;
-                }
-            }
-
-            function closeCvModal() {
-                if (!cvOverlay) return;
-                cvOverlay.classList.remove('is-open');
-                cvOverlay.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }
-
-            function loadPdf() {
-                if (!window['pdfjsLib'] || !pdfContainer) return;
-
-                // Clear existing pages if any
-                pdfContainer.innerHTML = '';
-
-                pdfjsLib.getDocument(pdfUrl).promise.then(function (pdf) {
-                    var total = pdf.numPages;
-
-                    function renderPage(pageNumber) {
-                        pdf.getPage(pageNumber).then(function (page) {
-                            var viewport = page.getViewport({ scale: 1.2 });
-                            var canvas = document.createElement('canvas');
-                            var context = canvas.getContext('2d');
-                            canvas.width = viewport.width;
-                            canvas.height = viewport.height;
-
-                            var renderContext = {
-                                canvasContext: context,
-                                viewport: viewport
-                            };
-
-                            pdfContainer.appendChild(canvas);
-                            page.render(renderContext);
-                        });
-                    }
-
-                    for (var pageNum = 1; pageNum <= total; pageNum++) {
-                        renderPage(pageNum);
-                    }
-                });
-            }
-
-            if (openCvBtn) {
-                openCvBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    openCvModal();
-                });
-            }
-
-            if (closeCvBtn) {
-                closeCvBtn.addEventListener('click', function () {
-                    closeCvModal();
-                });
-            }
-
-            if (cvOverlay) {
-                cvOverlay.addEventListener('click', function (e) {
-                    if (e.target === cvOverlay) closeCvModal();
-                });
-            }
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && cvOverlay && cvOverlay.classList.contains('is-open')) {
-                    closeCvModal();
-                }
             });
         })();
     </script>
