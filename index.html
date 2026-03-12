@@ -62,21 +62,29 @@
             font-size: 0.9rem;
             font-weight: bold;
             text-decoration: none;
-            color: var(--burgundy);
-            border: 1px solid var(--burgundy);
-            padding: 0.4rem 1rem;
+            color: #00ff73;
+            border: 1px solid #00ff73;
+            padding: 0.35rem 0.9rem;
             border-radius: 999px;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: transparent;
+            cursor: pointer;
         }
 
         .cv-nav-link:hover {
-            background-color: var(--burgundy);
-            color: var(--cream);
+            background-color: #00ff73;
+            color: #000000;
+        }
+
+        .cv-nav-link-icon {
+            font-size: 0.8rem;
         }
 
         /* --- HERO SECTION --- */
         header {
-            padding: 80px 0;
+            padding: 100px 0;
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 40px;
@@ -84,34 +92,16 @@
         }
 
         .hero-text h1 {
-            font-size: clamp(2.4rem, 4vw, 3.1rem);
-            line-height: 1.15;
-            margin-bottom: 16px;
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 20px;
             color: var(--burgundy);
         }
 
-        .hero-name,
-        .hero-role {
-            display: block;
-            white-space: nowrap;
-        }
-
-        .hero-role {
-            color: var(--dark-blue);
-        }
-
         .hero-sub {
-            font-size: 1rem;
+            font-size: 1.2rem;
             border-left: 4px solid var(--slate-blue);
             padding-left: 20px;
-            max-width: 40rem;
-        }
-
-        @media (max-width: 768px) {
-            header, .skills-section { grid-template-columns: 1fr; }
-            .hero-text h1 { font-size: 2.2rem; }
-            .hero-name,
-            .hero-role { white-space: normal; }
         }
 
         /* --- GRID SECTIONS --- */
@@ -299,26 +289,27 @@
             cursor: pointer;
         }
 
+        @media (max-width: 768px) {
+            header, .skills-section { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
+        <div class="logo retro-font">Frances Pham</div>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
             <button type="button" class="contact-trigger nav-link-style" data-open-contact>Contact</button>
-            <a href="FrancesPham_Business_Analyst.docx" class="cv-nav-link" target="_blank" rel="noopener noreferrer">View My CV</a>
         </div>
     </nav>
 
     <header id="about">
         <div class="hero-text">
-            <h1>
-                <span class="hero-name">Pham Anh Phuong (Frances)</span>
-                <span class="hero-role">Business/Marketing Analyst</span>
-            </h1>
+            <h1>Business<br>Analyst</h1>
             <p class="hero-sub">Data-driven specialist with an MSc in Business Intelligence & Analytics and 2 years of commercial experience in University of Huddersfield as Student Ambassador, UK.</p>
         </div>
         <div class="profile-summary">
@@ -331,9 +322,8 @@
         <div class="card">
             <span class="date">OCT 2025 – CONTINUING</span>
             <h3>Equity Research Analyst</h3>
-            <p><strong>Personal-Project and Competitions</strong></p>
+            <p><strong>Bath Investment Club</strong></p>
             <ul>
-                <li>Cooporate with Bath Investment Club to deliver market analysis for selected companies to support a decisive investment view.</li>
                 <li>Developed financial forecasts using Excel-based modeling.</li>
                 <li>Delivered investment theses through strategic business storytelling.</li>
             </ul>
