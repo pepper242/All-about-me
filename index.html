@@ -76,7 +76,7 @@
 
         /* --- HERO SECTION --- */
         header {
-            padding: 100px 0;
+            padding: 80px 0;
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 40px;
@@ -84,16 +84,24 @@
         }
 
         .hero-text h1 {
-            font-size: 5rem;
-            line-height: 1;
-            margin-bottom: 20px;
+            font-size: clamp(2.4rem, 4vw, 3.1rem);
+            line-height: 1.2;
+            margin-bottom: 16px;
             color: var(--burgundy);
         }
 
+        .hero-title-role {
+            display: block;
+            color: var(--dark-blue);
+            font-size: 0.85em;
+            margin-top: 0.15rem;
+        }
+
         .hero-sub {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             border-left: 4px solid var(--slate-blue);
             padding-left: 20px;
+            max-width: 40rem;
         }
 
         /* --- GRID SECTIONS --- */
@@ -302,7 +310,10 @@
 
     <header id="about">
         <div class="hero-text">
-            <h1>Business<br>Analyst</h1>
+            <h1>
+                Pham Anh Phuong (Frances)
+                <span class="hero-title-role">Business/Marketing Analyst</span>
+            </h1>
             <p class="hero-sub">Data-driven specialist with an MSc in Business Intelligence & Analytics and 2 years of commercial experience in University of Huddersfield as Student Ambassador, UK.</p>
         </div>
         <div class="profile-summary">
