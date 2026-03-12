@@ -44,6 +44,11 @@
             border-bottom: 1px solid var(--dark-blue);
         }
 
+        .logo {
+            font-size: 1.2rem;
+            letter-spacing: 0.08em;
+        }
+
         .nav-links a {
             text-decoration: none;
             color: var(--dark-blue);
@@ -72,39 +77,24 @@
 
         /* --- HERO SECTION --- */
         header {
-            padding: 80px 0 70px;
+            padding: 100px 0;
             display: grid;
-            grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+            grid-template-columns: 1.5fr 1fr;
             gap: 40px;
             align-items: center;
         }
 
         .hero-text h1 {
-            font-size: clamp(2.5rem, 4vw, 3.2rem);
-            line-height: 1.15;
-            margin-bottom: 22px;
-        }
-
-        .hero-name {
-            display: block;
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 20px;
             color: var(--burgundy);
-            text-transform: none;
-            letter-spacing: 0.04em;
-        }
-
-        .hero-role {
-            display: block;
-            color: var(--slate-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-size: 0.9em;
         }
 
         .hero-sub {
-            font-size: 1rem;
+            font-size: 1.2rem;
             border-left: 4px solid var(--slate-blue);
             padding-left: 20px;
-            max-width: 40rem;
         }
 
         /* --- GRID SECTIONS --- */
@@ -365,21 +355,19 @@
 <body>
 
     <nav>
+        <div class="logo retro-font">Frances Pham</div>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
-            <button type="button" class="contact-trigger nav-link-style" data-open-contact>Contact</button>
             <button type="button" class="cv-nav-link" data-open-cv>View My CV</button>
+            <button type="button" class="contact-trigger nav-link-style" data-open-contact>Contact</button>
         </div>
     </nav>
 
     <header id="about">
         <div class="hero-text">
-            <h1>
-                <span class="hero-name">Anh Phuong Pham (Frances)</span>
-                <span class="hero-role">Business/Marketing Analyst</span>
-            </h1>
+            <h1>Business<br>Analyst</h1>
             <p class="hero-sub">Data-driven specialist with an MSc in Business Intelligence & Analytics and 2 years of commercial experience in University of Huddersfield as Student Ambassador, UK.</p>
         </div>
         <div class="profile-summary">
@@ -392,9 +380,8 @@
         <div class="card">
             <span class="date">OCT 2025 – CONTINUING</span>
             <h3>Equity Research Analyst</h3>
-            <p><strong>Personal-Project and Competitions</strong></p>
+            <p><strong>Bath Investment Club</strong></p>
             <ul>
-                <li>Cooporate with Bath Investment Club to deliver fundamental and market analysis to support a decisive investment view.</li>
                 <li>Developed financial forecasts using Excel-based modeling.</li>
                 <li>Delivered investment theses through strategic business storytelling.</li>
             </ul>
