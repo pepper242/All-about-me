@@ -93,18 +93,24 @@
 
   /* ─── HERO ─── */
   .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem 2rem;
     overflow: hidden;
   }
   .hero-left {
     background: var(--navy);
-    display: flex; flex-direction: column;
-    justify-content: flex-end;
-    padding: 5rem 4rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 5rem;
     position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .hero-left::before {
     content: '';
@@ -113,20 +119,20 @@
     opacity: 1;
   }
   .hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.3rem;
     opacity: 0;
     animation: fadeUp 0.8s 0.2s forwards;
   }
   .hero-name {
     font-family: 'Abril Fatface', serif;
-    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     line-height: 0.95;
     color: var(--white);
-    margin-bottom: 2rem;
+    margin-bottom: 1.4rem;
     opacity: 0;
     animation: fadeUp 0.9s 0.4s forwards;
   }
@@ -137,21 +143,21 @@
     letter-spacing: 0.08em;
   }
   .hero-title {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-style: italic;
-    color: rgba(245,240,233,0.6);
-    line-height: 1.7;
-    max-width: 320px;
-    margin-bottom: 3rem;
+    color: rgba(245,240,233,0.75);
+    line-height: 1.75;
+    max-width: 48rem;
+    margin-bottom: 2rem;
     opacity: 0;
     animation: fadeUp 0.9s 0.6s forwards;
   }
   .hero-cta {
     display: inline-flex; align-items: center; gap: 0.8rem;
-    padding: 0.9rem 2rem;
+    padding: 1rem 2.2rem;
     border: 1px solid var(--gold);
     color: var(--gold);
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     text-decoration: none;
@@ -167,55 +173,6 @@
   .hero-cta svg { transition: transform 0.3s; }
   .hero-cta:hover svg { transform: translateX(4px); }
 
-  .hero-right {
-    background: var(--parchment);
-    display: flex; flex-direction: column;
-    justify-content: center;
-    padding: 5rem 4rem;
-    position: relative;
-  }
-  .hero-right-inner {
-    max-width: 28rem;
-    opacity: 0;
-    animation: fadeUp 1s 0.85s forwards;
-  }
-  .hero-right-lead {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--navy);
-    margin-bottom: 1.75rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(81, 116, 147, 0.25);
-  }
-  .hero-right-lead strong {
-    color: var(--burgundy);
-    font-weight: 600;
-  }
-  .hero-highlights {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-left: 3px solid var(--burgundy);
-    padding-left: 1.5rem;
-  }
-  .hero-highlights li {
-    font-size: 0.88rem;
-    line-height: 1.55;
-    color: var(--sapphire);
-    margin-bottom: 1rem;
-  }
-  .hero-highlights li:last-child { margin-bottom: 0; }
-  .hero-highlights strong {
-    display: block;
-    font-family: 'Abril Fatface', serif;
-    font-size: 1.05rem;
-    letter-spacing: 0.02em;
-    color: var(--navy);
-    margin-bottom: 0.15rem;
-    font-weight: normal;
-    text-transform: none;
-  }
   /* ─── SECTION STRUCTURE ─── */
   .section { padding: 7rem 5rem; }
   .section-header {
@@ -633,9 +590,8 @@
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
     .nav-links { gap: 1.5rem; }
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-right { padding: 4rem 2rem; }
-    .hero-left { padding: 5rem 2rem 4rem; }
+    .hero { min-height: auto; }
+    .hero-left { padding: 4rem 2rem; }
     .section { padding: 5rem 2rem; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .skills-panel { position: static; }
@@ -669,31 +625,19 @@
   <div class="hero-left">
     <p class="hero-eyebrow">Marketing &amp; Data Strategist</p>
     <h1 class="hero-name">
-      Pham Anh<br>Phuong
+      Pham Anh Phuong
       <span>(Frances)</span>
     </h1>
     <p class="hero-title">
-      Data-driven and creative professional translating analytics into
-      strategic marketing solutions - from dashboards to campaigns.
+      Data-driven and creative professional translating analytics into strategic marketing solutions - from dashboards to campaigns.
     </p>
     <a href="#contact" class="hero-cta">
       Let's connect
-      <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+      <svg width="30" height="10" viewBox="0 0 30 10" fill="none">
         <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
   </div>
-  <!-- <div class="hero-right">
-    <div class="hero-right-inner">
-      <p class="hero-right-lead"><strong>Manchester, United Kingdom</strong> — open to hybrid and remote roles across the UK.</p>
-      <ul class="hero-highlights">
-        <li><strong>2+ years</strong> commercial experience across analytics, research, and marketing execution</li>
-        <li><strong>MSc</strong> Business Intelligence &amp; Analytics</li>
-        <li><strong>3 major projects</strong> spanning feasibility studies, BI dashboards, and campaign delivery</li>
-        <li><strong>2 languages</strong> — English &amp; Vietnamese for international stakeholder work</li>
-      </ul>
-    </div>
-  </div> -->
 </section>
 
 <!-- ABOUT -->
