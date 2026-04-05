@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Palette from provided color image */
+            /* Palette derived from user-provided color image */
             --dark-blue: #022E4C;
             --slate-blue: #517493;
             --burgundy: #56061D;
@@ -24,35 +24,28 @@
         body {
             background-color: var(--cream);
             color: var(--dark-blue);
-            font-family: 'Libre Baskerville', serif;
+            font-family: 'Libre Baskerville', serif; /* Revival Font */
             line-height: 1.6;
             padding: 0 5%;
         }
 
-        h1, h2, h3, .retro-font {
-            font-family: 'Abril Fatface', cursive;
+        h1, h2, h3, .heading-retro {
+            font-family: 'Abril Fatface', cursive; /* Retro Font */
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 400;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- STRATEGIC NAVIGATION --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--dark-blue);
+            padding: 2.5rem 0;
+            border-bottom: 2px solid var(--dark-blue);
         }
 
-        .nav-links {
-            margin-left: auto;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            letter-spacing: 0.08em;
-        }
-
+        .logo { font-size: 1.5rem; color: var(--burgundy); }
         .nav-links a {
             text-decoration: none;
             color: var(--dark-blue);
@@ -61,528 +54,233 @@
             font-weight: bold;
         }
 
-        .cv-nav-link {
-            margin-right: 2.5rem;
-            padding: 0.55rem 1.4rem;
-            border-radius: 999px;
-            border: 1px solid var(--burgundy);
-            background-color: var(--burgundy);
-            color: var(--white);
-            font-size: 0.95rem;
-            font-weight: bold;
-            cursor: pointer;
-            font-family: inherit;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .cv-nav-link:hover {
-            background-color: transparent;
-            color: var(--burgundy);
-        }
-
-        /* --- HERO SECTION --- */
-        header {
+        /* --- BUSINESS HERO SECTION --- */
+        .hero {
             padding: 80px 0;
             display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 40px;
-            align-items: center;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: start;
         }
 
-        .hero-text h1 {
-            margin-bottom: 18px;
-            line-height: 1.1;
-        }
-
-        .hero-title-name {
-            display: block;
-            font-family: 'Abril Fatface', cursive;
-            font-size: clamp(2.4rem, 4.2vw, 3.4rem);
-            color: var(--burgundy);
-            text-transform: none;
-            letter-spacing: 0.02em;
-        }
-
-        .hero-title-role {
-            display: block;
-            font-family: 'Abril Fatface', cursive;
-            font-size: clamp(1.6rem, 3vw, 2.3rem);
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 0.9;
             color: var(--dark-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-top: 0.2rem;
-            white-space: nowrap;
+            margin-bottom: 1.5rem;
         }
 
-        .hero-sub {
-            font-size: 1.05rem;
-            max-width: 42rem;
-            border-left: 4px solid var(--slate-blue);
-            padding-left: 20px;
+        .profile-summary {
+            font-size: 1.1rem;
+            border-left: 5px solid var(--burgundy);
+            padding-left: 25px;
+            margin-top: 20px;
         }
 
-        /* --- GRID SECTIONS --- */
-        .section-title {
-            margin-bottom: 3rem;
+        /* --- COLLAGE-INSPIRED CONTENT GRID --- */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 50px;
+            margin-bottom: 100px;
+        }
+
+        .sidebar {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 40px;
+            height: fit-content;
+            box-shadow: 10px 10px 0px var(--burgundy);
+        }
+
+        .sidebar h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: var(--slate-blue);
+            border-bottom: 1px solid var(--slate-blue);
+        }
+
+        .sidebar-section { margin-bottom: 2.5rem; }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid var(--slate-blue);
+            padding: 4px 12px;
+            margin: 4px;
+            font-size: 0.8rem;
+            color: var(--cream);
+        }
+
+        /* --- MAIN EXPERIENCE AREA --- */
+        .content h2 {
             font-size: 2.5rem;
+            color: var(--burgundy);
+            margin-bottom: 2rem;
             border-bottom: 2px solid var(--burgundy);
             display: inline-block;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 5rem;
-        }
-
-        .card {
+        .experience-card {
             background: var(--white);
-            padding: 2rem;
-            border: 1px solid rgba(2, 46, 76, 0.1);
-            transition: transform 0.3s ease;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-left: 8px solid var(--slate-blue);
+            transition: all 0.3s ease;
         }
 
-        .card:hover {
+        .experience-card:hover {
+            box-shadow: 0 10px 30px rgba(2, 46, 76, 0.1);
             transform: translateY(-5px);
-            box-shadow: 10px 10px 0px var(--slate-blue);
         }
 
-        .card h3 {
-            color: var(--burgundy);
-            margin-bottom: 1rem;
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
         }
 
-        .date {
-            font-style: italic;
-            font-size: 0.8rem;
-            color: var(--slate-blue);
-            display: block;
-            margin-bottom: 1rem;
+        .job-title { 
+            font-family: 'Abril Fatface', cursive;
+            font-size: 1.3rem;
+            color: var(--dark-blue); 
         }
 
-        /* --- SKILLS & TOOLS --- */
-        .skills-section {
-            background-color: var(--dark-blue);
-            color: var(--cream);
-            padding: 4rem 2rem;
-            margin: 0 -5.5% 5rem -5.5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+        .job-date { 
+            font-size: 0.85rem; 
+            color: var(--slate-blue); 
+            font-weight: bold;
         }
 
-        .skills-section h2 { color: var(--white); }
-
-        .tool-tag {
-            display: inline-block;
-            border: 1px solid var(--slate-blue);
-            padding: 5px 15px;
-            margin: 5px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
+        ul { list-style: none; margin-top: 10px; }
+        li { margin-bottom: 12px; position: relative; padding-left: 20px; font-size: 0.95rem; }
+        li::before { content: "•"; color: var(--burgundy); position: absolute; left: 0; font-weight: bold; }
 
         footer {
             text-align: center;
-            padding: 4rem 0;
+            padding: 60px 0;
             border-top: 1px solid var(--dark-blue);
         }
 
-        .contact-btn {
-            background: var(--burgundy);
-            color: var(--white);
-            padding: 15px 30px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        /* --- CONTACT POPUP --- */
-        .contact-modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(2, 46, 76, 0.6);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-
-        .contact-modal-overlay.is-open {
-            display: flex;
-        }
-
-        .contact-modal {
-            background: var(--cream);
-            border: 2px solid var(--dark-blue);
-            padding: 2rem;
-            max-width: 420px;
-            width: 100%;
-            box-shadow: 15px 15px 0 var(--slate-blue);
-        }
-
-        .contact-modal h3 {
+        .footer-cta {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 2rem;
             color: var(--burgundy);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .contact-option {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.75rem;
-            background: var(--white);
-            border: 1px solid rgba(2, 46, 76, 0.15);
-            text-decoration: none;
-            color: var(--dark-blue);
-            transition: box-shadow 0.2s ease, transform 0.2s ease;
-            overflow: hidden;
-        }
-
-        .contact-option:hover {
-            box-shadow: 5px 5px 0 var(--slate-blue);
-            transform: translateY(-2px);
-        }
-
-        .contact-option strong {
-            flex-shrink: 0;
-            min-width: 55px;
-            color: var(--burgundy);
-            font-size: 0.72rem;
-        }
-
-        .contact-option span {
-            font-size: 0.72rem;
-            overflow-wrap: break-word;
-            word-break: break-word;
-            flex: 1;
-            min-width: 0;
-            line-height: 1.35;
-        }
-
-        .contact-modal-close {
-            display: block;
-            margin-top: 1.5rem;
-            padding: 10px 20px;
-            background: var(--dark-blue);
-            color: var(--white);
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.9rem;
-            width: 100%;
-        }
-
-        .contact-modal-close:hover {
-            background: var(--slate-blue);
-        }
-
-        .contact-trigger {
-            cursor: pointer;
-            background: none;
-            border: none;
-            font: inherit;
-            color: inherit;
-            padding: 0;
-            margin-left: 2rem;
-            font-size: 0.9rem;
-            font-weight: bold;
             text-decoration: none;
         }
 
-        .contact-trigger.nav-link-style {
-            color: var(--dark-blue);
-        }
-
-        .footer .contact-btn {
-            cursor: pointer;
-        }
-
-        /* --- CV MODAL (CV viewer) --- */
-        .cv-modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(2, 46, 76, 0.65);
-            z-index: 1100;
-            align-items: stretch;
-            justify-content: stretch;
-        }
-
-        .cv-modal-overlay.is-open {
-            display: flex;
-        }
-
-        .cv-modal {
-            background: var(--cream);
-            border-top: 2px solid var(--dark-blue);
-            border-bottom: 2px solid var(--dark-blue);
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cv-modal-header {
-            padding: 0.75rem 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(2, 46, 76, 0.15);
-        }
-
-        .cv-modal-title {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--burgundy);
-        }
-
-        .cv-modal-close {
-            background: none;
-            border: none;
-            font-size: 1.1rem;
-            cursor: pointer;
-            color: var(--dark-blue);
-        }
-
-        .cv-modal-close:hover {
-            color: var(--burgundy);
-        }
-
-        .cv-modal-body {
-            padding: 0.75rem;
-            background: #111827;
-            flex: 1;
-        }
-
-        .cv-modal-body iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        @media (max-width: 768px) {
-            header, .skills-section { grid-template-columns: 1fr; }
-            header { padding: 64px 0; }
-            .hero-text h1 { margin-bottom: 16px; }
+        @media (max-width: 900px) {
+            .hero, .main-layout { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.2rem; }
+            .sidebar { order: 2; }
+            .content { order: 1; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <button type="button" class="cv-nav-link" data-open-cv>View My CV</button>
+        <div class="logo heading-retro">Frances Pham</div>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <button type="button" class="contact-trigger nav-link-style" data-open-contact>Contact</button>
+            <a href="mailto:phamanhphuong17@gmail.com">CONTACT</a>
+            <a href="#">RESUME PDF</a>
         </div>
     </nav>
 
-    <header id="about">
-        <div class="hero-text">
-            <h1>
-                <span class="hero-title-name">Anh Phuong Pham (Frances)</span>
-                <span class="hero-title-role">Business/Marketing Analyst</span>
-            </h1>
-            <p class="hero-sub">Data-driven specialist with an MSc in Business Intelligence & Analytics and 2 years of commercial experience in University of Huddersfield as Student Ambassador, UK.</p>
-        </div>
-        <div class="profile-summary">
-            <p>Proficient in turning data into simple, clear business solutions using <strong>SQL, Power BI, Excel, and Python.</strong> Specializing in Customer and Marketing Analytics.</p>
-        </div>
-    </header>
-
-    <h2 class="section-title">Selected Experience</h2>
-    <div class="grid-container" id="experience">
-        <div class="card">
-            <span class="date">OCT 2025 – CONTINUING</span>
-            <h3>Equity Research Analyst</h3>
-            <p><strong>Personal-Project and Competitions</strong></p>
-            <ul>
-                <li>Cooporate with Bath Investment Club to deliver fundamental and market analysis to support a decisive investment view.</li>
-                <li>Developed financial forecasts using Excel-based modeling.</li>
-                <li>Delivered investment theses through strategic business storytelling.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <span class="date">JUN 2023 – AUG 2025</span>
-            <h3>External Consultant</h3>
-            <p><strong>Cedar Court Hotel</strong></p>
-            <ul>
-                <li>Conducted market feasibility studies for service expansions.</li>
-                <li>Developed cost-benefit frameworks for pricing strategies.</li>
-                <li>Presented interactive Power BI dashboards to senior leadership.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <span class="date">NOV 2021 – SEPT 2023</span>
-            <h3>Content & Marketing Executive</h3>
-            <p><strong>Delia Beauty</strong></p>
-            <ul>
-                <li>Optimized SEO strategy leading to significant traffic growth.</li>
-                <li>Managed multi-channel digital campaigns and content calendars.</li>
-                <li>Launched targeted lead generation for international segments.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="skills-section" id="skills">
+    <section class="hero">
         <div>
-            <h2>Core Analytical Competencies</h2>
-            <p>Predictive Modeling • Advanced Data Visualization • Business Intelligence • Stakeholder Management • Problem-Solving</p>
+            <h1>Business<br>Analyst</h1>
+            <div class="profile-summary">
+                <p>Data-driven professional with an MSc in Business Intelligence & Analytics[cite: 30, 90]. Specialized in turning complex data into actionable business solutions using <strong>SQL, Power BI, Excel, and Python</strong>[cite: 5, 33, 50, 93].</p>
+                <p style="margin-top: 10px;">Based in Manchester, United Kingdom[cite: 3, 47].</p>
+            </div>
         </div>
-        <div>
-            <h2>Technical Toolkit</h2>
-            <div class="tool-tag">SQL</div>
-            <div class="tool-tag">Python</div>
-            <div class="tool-tag">Power BI</div>
-            <div class="tool-tag">Microsoft Excel</div>
-            <div class="tool-tag">Predictive Analytics</div>
-            <div class="tool-tag">GitHub</div>
-            <div class="tool-tag">Cursor</div>
-            <div class="tool-tag">Vercel</div>
-        </div>
+    </section>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>Technical Tools</h2>
+                <div class="tag">SQL</div>
+                <div class="tag">Power BI</div>
+                <div class="tag">Python</div>
+                <div class="tag">Microsoft Excel</div>
+                <div class="tag">Figma</div>
+                <div class="tag">Tableau</div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Competencies</h2>
+                <p style="font-size: 0.85rem; color: var(--cream);">
+                    Predictive Modeling, Market Research, Competitor Analysis, and Data-Driven Storytelling[cite: 32, 55, 92].
+                </p>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Education</h2>
+                <p><strong>MSc Business Intelligence & Analytics</strong><br>University of Huddersfield [cite: 30, 90]</p><br>
+                <p><strong>BA (Hons) Global Marketing</strong><br>University of Huddersfield [cite: 28, 96]</p><br>
+                <p><strong>Business Administration</strong><br>Hanoi University of Science and Technology [cite: 26, 99]</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Languages</h2>
+                <p>English (Fluent)<br>Vietnamese (Native) [cite: 45, 126]</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <h2>Experience</h2>
+
+            <div class="experience-card">
+                <div class="job-header">
+                    <span class="job-title">Equity Research Analyst</span>
+                    <span class="job-date">OCT 2025 - PRESENT</span>
+                </div>
+                <p><em>Bath Investment Club [cite: 9, 119]</em></p>
+                <ul>
+                    <li>Conducted fundamental and market analysis for listed companies to support investment views[cite: 10, 67].</li>
+                    <li>Developed financial forecasts using Excel-based modeling to assess company performance[cite: 11, 69, 119].</li>
+                    <li>Delivered investment theses through storytelling, addressing risk factors and assumptions[cite: 12, 70, 119].</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="job-header">
+                    <span class="job-title">External Consultant (BA)</span>
+                    <span class="job-date">JUN 2023 - AUG 2025</span>
+                </div>
+                <p><em>Cedar Court Hotel [cite: 13, 57]</em></p>
+                <ul>
+                    <li>Performed market feasibility studies for service expansion using competitor data and gap analysis[cite: 15, 60, 108].</li>
+                    <li>Developed cost-benefit frameworks for distribution channels and pricing strategies[cite: 16, 61, 110].</li>
+                    <li>Presented interactive Power BI dashboards to senior leadership for data-driven capital expenditure planning[cite: 17, 63, 64].</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="job-header">
+                    <span class="job-title">Content & Marketing Executive</span>
+                    <span class="job-date">NOV 2021 - SEPT 2023</span>
+                </div>
+                <p><em>Delia Beauty [cite: 18, 80]</em></p>
+                <ul>
+                    <li>Optimized SEO and content strategy, resulting in significant website traffic growth[cite: 21, 83].</li>
+                    <li>Launched targeted lead generation campaigns for overseas customers during Lunar New Year events[cite: 24, 85].</li>
+                    <li>Managed full-cycle digital content calendars across Facebook and YouTube[cite: 22, 84].</li>
+                    <li>Utilized marketing analytics to deliver performance reports for strategy and budget allocation[cite: 24, 87].</li>
+                </ul>
+            </div>
+        </main>
     </div>
 
     <footer>
-        <h2 class="retro-font">Let's Connect</h2>
-        <p>Currently based in Manchester, United Kingdom</p>
-        <p>Fluent in English & Vietnamese</p>
-        <button type="button" class="contact-btn" data-open-contact>Email Frances</button>
+        <p class="heading-retro">Get In Touch</p>
+        <a href="mailto:phamanhphuong17@gmail.com" class="footer-cta">phamanhphuong17@gmail.com</a>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: var(--slate-blue);">
+            Strategic Analysis • Business Intelligence • Digital Marketing
+        </p>
     </footer>
-
-    <!-- CV modal -->
-    <div class="cv-modal-overlay" id="cv-modal" aria-hidden="true">
-        <div class="cv-modal" role="dialog" aria-labelledby="cv-modal-title">
-            <div class="cv-modal-header">
-                <div class="cv-modal-title" id="cv-modal-title">Frances Pham – Curriculum Vitae</div>
-                <button type="button" class="cv-modal-close" data-close-cv aria-label="Close CV viewer">×</button>
-            </div>
-            <div class="cv-modal-body">
-                <iframe id="cv-iframe" title="Frances Pham CV PDF viewer"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact popup -->
-    <div class="contact-modal-overlay" id="contact-modal" aria-hidden="true">
-        <div class="contact-modal" role="dialog" aria-labelledby="contact-modal-title">
-            <h3 id="contact-modal-title" class="retro-font">Get in touch</h3>
-            <a href="mailto:phamanhphuong17@gmail.com" class="contact-option">
-                <strong>Email:</strong>
-                <span>phamanhphuong17@gmail.com</span>
-            </a>
-            <a href="tel:+447401673183" class="contact-option">
-                <strong>Number:</strong>
-                <span>+44(0)7401673183</span>
-            </a>
-            <button type="button" class="contact-modal-close" data-close-contact>Close</button>
-        </div>
-    </div>
-
-    <script>
-        (function () {
-            var overlay = document.getElementById('contact-modal');
-            var openButtons = document.querySelectorAll('[data-open-contact]');
-            var closeBtn = document.querySelector('[data-close-contact]');
-
-            function openModal() {
-                overlay.classList.add('is-open');
-                overlay.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-                overlay.classList.remove('is-open');
-                overlay.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }
-
-            openButtons.forEach(function (btn) {
-                btn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    openModal();
-                });
-            });
-
-            if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-            overlay.addEventListener('click', function (e) {
-                if (e.target === overlay) closeModal();
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
-            });
-        })();
-    </script>
-
-    <script>
-        (function () {
-            var cvOverlay = document.getElementById('cv-modal');
-            var openCvBtn = document.querySelector('[data-open-cv]');
-            var closeCvBtn = document.querySelector('[data-close-cv]');
-            var cvIframe = document.getElementById('cv-iframe');
-
-            // Convert Google Drive "view" URL to embeddable preview URL
-            var pdfPreviewUrl = 'https://drive.google.com/file/d/1zHCVlh-caWn6olSF1HgqUSgCoEmqL5cW/preview';
-
-            function openCvModal() {
-                if (!cvOverlay) return;
-                if (cvIframe && !cvIframe.src) {
-                    cvIframe.src = pdfPreviewUrl;
-                }
-                cvOverlay.classList.add('is-open');
-                cvOverlay.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeCvModal() {
-                if (!cvOverlay) return;
-                cvOverlay.classList.remove('is-open');
-                cvOverlay.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }
-
-            if (openCvBtn) {
-                openCvBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    openCvModal();
-                });
-            }
-
-            if (closeCvBtn) {
-                closeCvBtn.addEventListener('click', function () {
-                    closeCvModal();
-                });
-            }
-
-            if (cvOverlay) {
-                cvOverlay.addEventListener('click', function (e) {
-                    if (e.target === cvOverlay) closeCvModal();
-                });
-            }
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && cvOverlay && cvOverlay.classList.contains('is-open')) {
-                    closeCvModal();
-                }
-            });
-        })();
-    </script>
 
 </body>
 </html>
