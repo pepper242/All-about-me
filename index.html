@@ -101,17 +101,47 @@
     overflow: hidden;
     background: var(--navy);
   }
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+  }
   .hero-left {
     background: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 4rem 5rem;
+    padding: 4rem 0;
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+  }
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-photo-frame {
+    width: 340px;
+    height: 340px;
+    padding: 1.5rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 55%),
+                linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05));
+    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.22);
   }
   .hero-left::before {
     content: '';
@@ -592,7 +622,10 @@
     nav { padding: 1.2rem 2rem; }
     .nav-links { gap: 1.5rem; }
     .hero { min-height: auto; }
-    .hero-left { padding: 4rem 2rem; }
+    .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-left { padding: 4rem 2rem; align-items: center; text-align: center; }
+    .hero-right { justify-content: center; }
+    .hero-photo-frame { width: 260px; height: 260px; }
     .section { padding: 5rem 2rem; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .skills-panel { position: static; }
@@ -623,21 +656,29 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Marketing &amp; Data Strategist</p>
-    <h1 class="hero-name">
-      Pham Anh Phuong
-      <span>(Frances)</span>
-    </h1>
-    <p class="hero-title">
-      Data-driven and Creative | From dashboards to campaigns
-    </p>
-    <a href="#contact" class="hero-cta">
-      Let's connect
-      <svg width="30" height="10" viewBox="0 0 30 10" fill="none">
-        <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+  <div class="hero-content">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Marketing &amp; Data Strategist</p>
+      <h1 class="hero-name">
+        Pham Anh Phuong
+        <span>(Frances)</span>
+      </h1>
+      <p class="hero-title">
+        Data-driven and Creative | From dashboards to campaigns<br>
+        translating analytics into strategic marketing solutions.
+      </p>
+      <a href="#contact" class="hero-cta">
+        Let's connect
+        <svg width="30" height="10" viewBox="0 0 30 10" fill="none">
+          <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-right reveal">
+      <div class="hero-photo-frame">
+        <img src="WhatsApp Image 2026-04-05 at 23.36.49.jpeg" alt="Frances Pham headshot">
+      </div>
+    </div>
   </div>
 </section>
 
