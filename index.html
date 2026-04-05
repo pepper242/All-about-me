@@ -50,6 +50,7 @@
   }
   .nav-links {
     display: flex; gap: 2.5rem; list-style: none;
+    align-items: center;
   }
   .nav-links a {
     font-family: 'Libre Baskerville', serif;
@@ -69,6 +70,26 @@
   }
   .nav-links a:hover::after { width: 100%; }
   .nav-links a:hover { color: var(--burgundy); }
+  .nav-links .cv-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0.65rem 1.15rem;
+    border: 1px solid rgba(81, 116, 147, 0.18);
+    border-radius: 999px;
+    color: var(--sapphire);
+    background: rgba(245, 240, 233, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .nav-links .cv-link::after { display: none; }
+  .nav-links .cv-link:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--burgundy);
+  }
 
   /* ─── HERO ─── */
   .hero {
@@ -639,6 +660,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a class="cv-link" href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/pepper242/All-about-me/main/Academic_CV___Phuong.pdf" target="_blank" rel="noopener noreferrer">View my CV</a></li>
   </ul>
 </nav>
 
