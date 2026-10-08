@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frances Pham — Marketing & Data Strategist</title>
+<title>Frances Pham - Business &amp; Data Analyst</title>
+<meta name="description" content="Business Analyst with 2+ years across hospitality, consumer and e-commerce. SQL, Power BI and Excel, turning complex data into clear commercial recommendations.">
+<meta property="og:title" content="Frances Pham - Business &amp; Data Analyst">
+<meta property="og:description" content="Business Analyst with 2+ years across hospitality, consumer and e-commerce. SQL, Power BI and Excel, turning complex data into clear commercial recommendations.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://all-about-me-rose.vercel.app/frances-pham.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -148,6 +153,7 @@
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23517493' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     opacity: 1;
+    pointer-events: none;
   }
   .hero-eyebrow {
     font-size: 0.65rem;
@@ -203,6 +209,11 @@
   }
   .hero-cta svg { transition: transform 0.3s; }
   .hero-cta:hover svg { transform: translateX(4px); }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 
   /* ─── SECTION STRUCTURE ─── */
   .section { padding: 7rem 5rem; }
@@ -374,6 +385,11 @@
     padding: 0.25rem 0.65rem;
     margin-top: 0.8rem;
   }
+  a.exp-badge {
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  a.exp-badge:hover { background: var(--navy); }
 
   /* ─── PROJECTS ─── */
   #projects { background: var(--navy); }
@@ -391,7 +407,6 @@
     position: relative;
     overflow: hidden;
     transition: background 0.3s, border-color 0.3s;
-    cursor: pointer;
   }
   .project-card::before {
     content: '';
@@ -444,6 +459,25 @@
     color: var(--slate);
     letter-spacing: 0.08em;
   }
+  .project-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    text-underline-offset: 4px;
+  }
+  .project-link:hover { text-decoration: underline; }
+  .project-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid rgba(81,116,147,0.3);
+    margin-bottom: 1.5rem;
+  }
 
   /* ─── EDUCATION ─── */
   #education { background: var(--parchment); }
@@ -457,6 +491,13 @@
     padding: 2.5rem;
     border-top: 3px solid var(--navy);
     position: relative;
+  }
+  .edu-date {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 0.4rem;
   }
   .edu-degree {
     font-family: 'Abril Fatface', serif;
@@ -560,6 +601,11 @@
   }
   .lang-items {
     display: flex; gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .lang-note {
+    margin-top: 1.2rem;
+    line-height: 1.7;
   }
   .lang-item {
     display: flex; flex-direction: column; gap: 0.3rem;
@@ -620,7 +666,8 @@
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
-    .nav-links { gap: 1.5rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { letter-spacing: 0.1em; }
     .hero { min-height: auto; }
     .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
     .hero-left { padding: 4rem 2rem; align-items: center; text-align: center; }
@@ -635,6 +682,38 @@
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     #contact::before { font-size: 50vw; }
+    #contact { padding: 6rem 2rem; }
+    .contact-value { overflow-wrap: anywhere; }
+    .hero-actions { justify-content: center; }
+  }
+
+  @media (max-width: 760px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links li:not(:last-child) { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero-left { padding: 3rem 0; }
+    .hero-cta { padding: 1rem 1.6rem; white-space: nowrap; }
+    .contact-item { flex-direction: column; gap: 0.4rem; }
+  }
+
+  /* ─── REDUCED MOTION ─── */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    .hero-eyebrow, .hero-name, .hero-title, .hero-cta {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal, .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
   }
 </style>
 </head>
@@ -650,7 +729,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a class="cv-link" href="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/pepper242/All-about-me/main/Academic_CV___Phuong.pdf" target="_blank" rel="noopener noreferrer">View my CV</a></li>
+    <li><a class="cv-link" href="Frances_Pham_CV.pdf" target="_blank" rel="noopener noreferrer">View my CV</a></li>
   </ul>
 </nav>
 
@@ -658,24 +737,32 @@
 <section class="hero">
   <div class="hero-content">
     <div class="hero-left">
-      <p class="hero-eyebrow">Marketing &amp; Data Strategist</p>
+      <p class="hero-eyebrow">Business &amp; Data Analyst</p>
       <h1 class="hero-name">
-        Pham Anh Phuong
+        Anh Phuong Pham
         <span>(Frances)</span>
       </h1>
       <p class="hero-title">
-        Data-driven and Creative | From dashboards to campaigns
+        Hospitality · Consumer · <span style="white-space: nowrap;">E-commerce</span> | From messy data to commercial decisions
       </p>
-      <a href="#contact" class="hero-cta">
-        Let's connect
-        <svg width="30" height="10" viewBox="0 0 30 10" fill="none">
-          <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+      <div class="hero-actions">
+        <a href="#contact" class="hero-cta">
+          Let's connect
+          <svg width="30" height="10" viewBox="0 0 30 10" fill="none">
+            <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="Frances_Pham_CV.pdf" class="hero-cta" target="_blank" rel="noopener noreferrer">
+          View CV
+          <svg width="30" height="10" viewBox="0 0 30 10" fill="none">
+            <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
     </div>
     <div class="hero-right reveal">
       <div class="hero-photo-frame">
-        <img src="WhatsApp Image 2026-04-05 at 23.36.49.jpeg" alt="Frances Pham headshot">
+        <img src="frances-pham.jpg" alt="Frances Pham headshot">
       </div>
     </div>
   </div>
@@ -691,20 +778,18 @@
   <div class="about-grid reveal">
     <div class="about-text">
       <p>
-        Data-driven and creative with a Master's degree in Business Intelligence &amp; Analytics
-        and 4 years actively in commercial experience <span class="about-highlight">customer and marketing analytics</span>.
-        Turning data into clear, actionable business solutions.
+        Business Analyst with 2+ years across hospitality, consumer and e-commerce, and an MSc in
+        Business Intelligence &amp; Analytics. I clean and structure complex data, then turn it into
+        <span class="about-highlight">clear commercial recommendations</span> for senior and non-technical stakeholders.
       </p>
       <p>
-        Seeking roles in Market Analysis, Data Analysis, Digital Marketing where analytical rigour meets
-        real-world marketing insight. My background spans both the strategic and the executional - from
-        building BI dashboards for hotel feasibility studies to managing full-cycle content calendars
-        across Meta and Youtube.
+        At Cedar Court Hotels I built the Power BI investment case for a £320k long-stay project, estimating
+        a ~10-year payback and supporting a no-go decision with a lower-cost alternative. Most recently, as
+        Project Analyst for Bridging the Silence, I ran KPI/RAG reporting and risk control for a 9-person
+        youth mental health campaign across the UK and ASEAN.
       </p>
       <p>
-        Most recently, I co-developed a youth mental health awareness campaign targeting 700+ students and
-        parents across ASEAN, leading KPI framework design, survey strategy, and content production - an
-        initiative that reflects my belief that <span class="about-highlight">data and storytelling work best together</span>.
+        I'm bilingual in English and Vietnamese, and I believe <span class="about-highlight">data and storytelling work best together</span>.
       </p>
     </div>
     <div class="skills-panel">
@@ -712,39 +797,41 @@
       <div class="skill-group">
         <div class="skill-group-title">Data &amp; Reporting</div>
         <div class="skill-tags">
-          <span class="skill-tag">Power BI</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Excel Advanced</span>
+          <span class="skill-tag">SQL Server</span>
+          <span class="skill-tag">Power BI (DAX)</span>
+          <span class="skill-tag">Advanced Excel</span>
           <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">Python (basic)</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">Digital Marketing</div>
+        <div class="skill-group-title">Analysis</div>
         <div class="skill-tags">
-          <span class="skill-tag">SEO Strategy</span>
-          <span class="skill-tag">Content Planning</span>
-          <span class="skill-tag">Social Media</span>
-          <span class="skill-tag">Copywriting</span>
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Campaign Mgmt</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Analytics</div>
-        <div class="skill-tags">
+          <span class="skill-tag">KPI &amp; RAG Reporting</span>
+          <span class="skill-tag">Scenario Modelling</span>
+          <span class="skill-tag">ROAS &amp; CAC</span>
+          <span class="skill-tag">Competitor Benchmarking</span>
           <span class="skill-tag">Market Research</span>
-          <span class="skill-tag">Competitor Analysis</span>
-          <span class="skill-tag">KPI Frameworks</span>
-          <span class="skill-tag">Performance Tracking</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">Soft Skills</div>
+        <div class="skill-group-title">AI &amp; Workflow</div>
         <div class="skill-tags">
+          <span class="skill-tag">Claude</span>
+          <span class="skill-tag">Cursor</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Vercel</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Marketing &amp; Communication</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SEO &amp; Content Strategy</span>
+          <span class="skill-tag">Campaign Reporting</span>
+          <span class="skill-tag">Figma</span>
           <span class="skill-tag">Stakeholder Comms</span>
           <span class="skill-tag">Business Storytelling</span>
-          <span class="skill-tag">Cross-functional Teams</span>
         </div>
       </div>
     </div>
@@ -762,33 +849,52 @@
 
     <div class="exp-item reveal">
       <div class="exp-meta">
-        <div class="exp-date">Jun – Sep 2025</div>
-        <div class="exp-company">Cedar Court Hotel</div>
-        <div class="exp-location">Huddersfield, UK</div>
+        <div class="exp-date">Mar 2026 – Sep 2026</div>
+        <div class="exp-company">Bridging the Silence</div>
+        <div class="exp-location">Manchester, UK (Remote)</div>
       </div>
       <div class="exp-content">
-        <div class="exp-role">External Consultant — Business Analyst</div>
+        <div class="exp-role">Project Analyst</div>
         <ul class="exp-bullets">
-          <li>Conducted market feasibility study for long stay accommodation expansion, benchmarking 14 competitors on occupancy, ADR, and RevPAR across Bradford, Huddersfield, and Wakefield</li>
-          <li>Developed cost-benefit framework evaluating distribution channels and pricing strategies; aligned recommendations with Green Tourism Guidelines</li>
-          <li>Built Power BI visualisations from structured SQL-cleaned operational data to surface revenue trends, occupancy patterns, and demand gaps</li>
-          <li>Delivered formal presentation to senior leadership, contributing directly to the 2025/26 capital expenditure plan</li>
+          <li>Coordinated a 9-person team using KPI/RAG reporting, budget scenarios and an 18-risk control matrix, supporting 100+ registrations and 50+ enquiries.</li>
+          <li>Designed the registration and donation journey to improve the campaign's user experience.</li>
+          <li>Built the campaign website with Claude and Cursor, deployed with GitHub and Vercel, validating outputs before launch.</li>
+          <li>Worked with data scientists to integrate the GoFundMe API for live, timestamped donation tracking.</li>
         </ul>
+        <a class="exp-badge" href="https://theprojectdarts.co.uk/events/leader-incubator-2026-finale/projects/bridge-the-silence" target="_blank" rel="noopener noreferrer">Leader Incubator 2026 Finale · The Project Darts</a>
       </div>
     </div>
 
     <div class="exp-item reveal">
       <div class="exp-meta">
-        <div class="exp-date">Oct 2025 – Feb 2026</div>
-        <div class="exp-company">Stock Pitch Competition</div>
+        <div class="exp-date">Oct 2025 – May 2026</div>
+        <div class="exp-company">Project Darts Stock Pitch · SOBIC</div>
         <div class="exp-location">United Kingdom</div>
       </div>
       <div class="exp-content">
-        <div class="exp-role">Global Equity Self-Research Analyst</div>
+        <div class="exp-role">Equity Research Analyst</div>
         <ul class="exp-bullets">
-          <li>Conducted market analysis for listed companies in collaboration with University of Bath Investment Club to support a decisive investment view</li>
-          <li>Developed Excel-based financial forecasts assessing company performance and supporting investment recommendations</li>
-          <li>Delivered investment thesis through business storytelling, fielding follow-up questions on assumptions and risk factors</li>
+          <li>Researched Grifols, Limbs &amp; Things and MWG, building Excel revenue and margin forecasts under bear, base and bull scenarios.</li>
+          <li>Presented the investment case to a panel, defending assumptions and explaining downside risks.</li>
+          <li>Supported the Students of Bath Investment Club (SOBIC) with portfolio research, stock selection and monitoring.</li>
+        </ul>
+        <span class="exp-badge">Top 5 of 30 teams</span>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">Jun 2025 – Sep 2025</div>
+        <div class="exp-company">Cedar Court Hotels</div>
+        <div class="exp-location">Huddersfield, UK</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Business Analyst (Contract)</div>
+        <ul class="exp-bullets">
+          <li>Cleaned and structured 2,500+ KPI records covering 426 days across 12 hotels using Excel and SQL.</li>
+          <li>Benchmarked hotel revenue KPIs to identify off-peak demand gaps.</li>
+          <li>Built an Excel scenario model for a £4,000 annual digital budget across three locations using attributable revenue, CAC and planned ROAS, identifying the strongest market at 2.98x planned ROAS vs 1.97x overall.</li>
+          <li>Built a Power BI dashboard to assess a £320k long-stay investment, estimating a ~10-year payback and supporting a no-go decision plus a lower-cost family-suite alternative.</li>
         </ul>
       </div>
     </div>
@@ -800,12 +906,11 @@
         <div class="exp-location">Huddersfield, UK</div>
       </div>
       <div class="exp-content">
-        <div class="exp-role">Student Ambassador</div>
+        <div class="exp-role">Student Representative</div>
         <ul class="exp-bullets">
-          <li>Scripted, filmed, and produced multimedia content for marketing campaigns, applying storytelling techniques to maximise audience reach</li>
-          <li>Represented the university across digital platforms, strengthening brand visibility and supporting student recruitment objectives</li>
+          <li>Scripted, filmed and produced promotional videos on student life for the university's international channels.</li>
+          <li>Strengthened the university's digital presence and supported international student recruitment.</li>
         </ul>
-        <span class="exp-badge">Videos trended - 30x above-average engagement </span>
       </div>
     </div>
 
@@ -816,14 +921,13 @@
         <div class="exp-location">Hanoi, Vietnam</div>
       </div>
       <div class="exp-content">
-        <div class="exp-role">Content &amp; Marketing Executive</div>
+        <div class="exp-role">Business Analyst</div>
         <ul class="exp-bullets">
-          <li>Drove significant website traffic growth through SEO and content strategy optimisation — recognised as Most Progressive Employee Q1 2021</li>
-          <li>Managed full-cycle digital content calendars across Facebook and YouTube; executed multi-channel digital campaigns across diverse customer segments</li>
-          <li>Built specialised microsites using Figma for tailored promotions and lead generation</li>
-          <li>Conducted keyword research and competitor analysis; delivered regular performance reports informing future strategy and budget allocation</li>
+          <li>Tracked spend, enquiries, conversion, revenue and estimated margin in Excel against a £16,400 monthly campaign budget.</li>
+          <li>Produced weekly performance reports for the Marketing Manager, flagging underperforming ads and higher-return opportunities.</li>
+          <li>Compared channel and customer-segment performance to identify higher-value audiences.</li>
+          <li>Used Google Analytics and campaign data to improve the overseas-customer journey, lifting conversion from 12.30% to 15.62% and organic traffic by 72%, contributing 25–30% of total revenue.</li>
         </ul>
-        <span class="exp-badge">🏆 Most Progressive Employee — Q1 2021</span>
       </div>
     </div>
 
@@ -834,61 +938,62 @@
 <section class="section" id="projects">
   <div class="section-header">
     <span class="section-num">03</span>
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">Selected Work</h2>
     <div class="section-line" style="background: linear-gradient(to right, rgba(81,116,147,0.5), transparent);"></div>
   </div>
   <div class="projects-grid">
+    <!--
+      To add a screenshot, put this as the FIRST line inside a card:
+        <img class="project-thumb" src="your-screenshot.png" alt="Short description of the dashboard">
+      To add a link, put this as the LAST line inside a card (after project-tools):
+        <a class="project-link" href="https://..." target="_blank" rel="noopener noreferrer">View project →</a>
+    -->
 
     <div class="project-card reveal">
       <div class="project-num">01</div>
-      <div class="project-title">Cedar Court Hotel — Market Feasibility Study</div>
-      <div class="project-role">Group Consultancy · June – August 2025</div>
-      <p class="project-desc">Analysed feasibility of long-stay accommodation expansion across three Yorkshire locations. Developed phased pricing model combining full-cost and penetration strategies, and designed a go-to-market content strategy with KPI tracking framework.</p>
+      <div class="project-title">E-commerce Profitability Drivers</div>
+      <div class="project-role">Power BI Report · 2026</div>
+      <p class="project-desc">Report showing what drives e-commerce profitability across margins, returns, promotions, customer cohorts, fulfilment and stock availability, built to help marketing and operations teams decide where to act.</p>
       <div class="project-tools">
-        <span class="project-tool">SQL</span>
         <span class="project-tool">Power BI</span>
-        <span class="project-tool">Excel</span>
-        <span class="project-tool">Porter's Five Forces</span>
-        <span class="project-tool">Ansoff Matrix</span>
+        <span class="project-tool">DAX</span>
+        <span class="project-tool">Data Modelling</span>
       </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-num">02</div>
-      <div class="project-title">Bridging the Silence — Youth Mental Health Campaign</div>
-      <div class="project-role">Social Impact · March 2026 – Present</div>
-      <p class="project-desc">Designed KPI framework tracking 17+ indicators (output, outcome, impact) with RAG-status dashboard for a 6-week programme targeting 200+ parents and 500+ students across 3+ schools in the UK and ASEAN markets.</p>
+      <div class="project-title">PMO Portfolio: From Strategy to Success</div>
+      <div class="project-role">FP20 Analytics Challenge 41 · 2026</div>
+      <p class="project-desc">Power BI report assessing portfolio performance and delivery risk, recommending which projects to accelerate, recover, pause or terminate.</p>
       <div class="project-tools">
-        <span class="project-tool">Survey Design</span>
-        <span class="project-tool">KPI Frameworks</span>
-        <span class="project-tool">Data Analysis</span>
-        <span class="project-tool">Content Strategy</span>
-        <span class="project-tool">Canva</span>
+        <span class="project-tool">Power BI</span>
+        <span class="project-tool">DAX</span>
+        <span class="project-tool">Portfolio Analysis</span>
       </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-num">03</div>
-      <div class="project-title">Global Equity Research — Stock Pitch Competitions</div>
-      <div class="project-role">Financial Analysis · Oct 2025 – Feb 2026</div>
-      <p class="project-desc">Market analysis for listed companies (Grifols, Limbs &amp; Things, MWG) in collaboration with University of Bath Investment Club. Built Excel-based financial forecasts and delivered investment thesis through business storytelling.</p>
+      <div class="project-title">Cosmetic Beauty - Commercial Case Study</div>
+      <div class="project-role">SQL &amp; Excel · 2026</div>
+      <p class="project-desc">Profiled a synthetic e-commerce dataset in SQL, structured the problem with MECE issue trees and built Excel workbooks with strategic recommendations. Key finding: the assortment is fragrance-led rather than K-beauty-led, which reframes the positioning question.</p>
       <div class="project-tools">
-        <span class="project-tool">Excel Financial Modelling</span>
-        <span class="project-tool">Market Analysis</span>
-        <span class="project-tool">Investment Research</span>
+        <span class="project-tool">SQL Server</span>
+        <span class="project-tool">Excel</span>
+        <span class="project-tool">Issue Trees</span>
       </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-num">04</div>
-      <div class="project-title">University Promotional Video Campaign</div>
-      <div class="project-role">Content Production · Sep 2023 – Dec 2025</div>
-      <p class="project-desc">Created impactful promotional videos showcasing student life and academic programmes for the University of Huddersfield's international channels. Scripted, filmed, and produced end-to-end video content that trended and achieved consistently above-average engagement.</p>
+      <div class="project-title">Airline Passenger Satisfaction</div>
+      <div class="project-role">MSc Project · 2025</div>
+      <p class="project-desc">Analysed airline reviews in Python and Tableau to show what drives passenger satisfaction, how customer segments differ and how service quality trends, ending in service-strategy recommendations.</p>
       <div class="project-tools">
-        <span class="project-tool">Video Production</span>
-        <span class="project-tool">Scripting</span>
-        <span class="project-tool">Storytelling</span>
-        <span class="project-tool">Digital Marketing</span>
+        <span class="project-tool">Python</span>
+        <span class="project-tool">Tableau</span>
+        <span class="project-tool">Data Visualisation</span>
       </div>
     </div>
 
@@ -905,6 +1010,7 @@
   <div class="edu-grid">
 
     <div class="edu-card reveal">
+      <div class="edu-date">Sep 2024 – Jul 2025 · 2:1</div>
       <div class="edu-degree">MSc Business Intelligence &amp; Analytics</div>
       <div class="edu-school">University of Huddersfield</div>
       <div class="edu-location">Huddersfield, United Kingdom</div>
@@ -912,6 +1018,7 @@
     </div>
 
     <div class="edu-card reveal">
+      <div class="edu-date">Sep 2023 – Jul 2024 · 2:1</div>
       <div class="edu-degree">BA (Hons) Global Marketing</div>
       <div class="edu-school">University of Huddersfield</div>
       <div class="edu-location">Huddersfield, United Kingdom</div>
@@ -919,7 +1026,8 @@
     </div>
 
     <div class="edu-card reveal">
-      <div class="edu-degree">Business Administration (Bilingual)</div>
+      <div class="edu-date">Sep 2020 – Jul 2023 · First Class Honours</div>
+      <div class="edu-degree">BA Technology and Business Management (Bilingual)</div>
       <div class="edu-school">Hanoi University of Science and Technology</div>
       <div class="edu-location">Hanoi, Vietnam</div>
       <p class="edu-desc">Strong foundational knowledge in economics, management, and business communication. Bilingual programme conducted in English and Vietnamese, building cross-cultural professional capability.</p>
@@ -936,7 +1044,7 @@
         Let's work<br><em>together.</em>
       </h2>
       <p class="contact-sub">
-        Open to roles in market analysis, data analytics, and digital marketing across the UK.
+        Open to Business Analyst, Data Analyst and Operations Analyst roles across the UK.
         I bring both the numbers and the narrative.
       </p>
       <div class="contact-languages">
@@ -950,7 +1058,12 @@
             <span class="lang-name">Vietnamese</span>
             <span class="lang-level">Native</span>
           </div>
+          <div class="lang-item">
+            <span class="lang-name">French</span>
+            <span class="lang-level">Basic</span>
+          </div>
         </div>
+        <p class="lang-level lang-note">Freelance Conference Interpreter · Word4Word Legal Translation Services · Jul 2026 – present</p>
       </div>
     </div>
     <div class="contact-details reveal">
@@ -964,11 +1077,11 @@
       </div>
       <div class="contact-item">
         <span class="contact-label">LinkedIn</span>
-        <a href="#" class="contact-value">https://www.linkedin.com/in/francespham/</a>
+        <a href="https://www.linkedin.com/in/francespham/" class="contact-value" target="_blank" rel="noopener noreferrer">linkedin.com/in/francespham</a>
       </div>
       <div class="contact-item">
         <span class="contact-label">GitHub</span>
-        <a href="#" class="contact-value">https://github.com/pepper242</a>
+        <a href="https://github.com/pepper242" class="contact-value" target="_blank" rel="noopener noreferrer">github.com/pepper242</a>
       </div>
       <div class="contact-item">
         <span class="contact-label">Location</span>
@@ -979,8 +1092,8 @@
 </section>
 
 <footer>
-  <span class="footer-copy">© 2026 Pham Anh Phuong (Frances). All rights reserved.</span>
-  <span class="footer-name">Frances Pham — Strategist</span>
+  <span class="footer-copy">© 2026 Anh Phuong (Frances) Pham. All rights reserved.</span>
+  <span class="footer-name">Frances Pham - Business &amp; Data Analyst</span>
 </footer>
 
 <script>
