@@ -603,9 +603,15 @@
     display: flex; gap: 1.5rem;
     flex-wrap: wrap;
   }
-  .lang-note {
+    .lang-level.lang-note {
     margin-top: 1.2rem;
     line-height: 1.7;
+    font-weight: 700;
+    color: var(--cream);
+  }
+  .lang-note span { white-space: nowrap; }
+  .lang-note a { color: inherit; text-underline-offset: 3px; transition: color 0.2s; }
+  .lang-note a:hover { color: var(--gold); }
   }
   .lang-item {
     display: flex; flex-direction: column; gap: 0.3rem;
@@ -1063,7 +1069,7 @@
             <span class="lang-level">Basic</span>
           </div>
         </div>
-        <p class="lang-level lang-note">Freelance Conference Interpreter · Word4Word Legal Translation Services · Jul 2026 – present</p>
+        <p class="lang-level lang-note"><span>Conference Interpreter</span> · <span><a href="https://www.linkedin.com/company/word4word-legal-translation-services-ltd/" target="_blank" rel="noopener noreferrer">Word4Word</a></span> · <span>Jul 2026 – present</span></p>
       </div>
     </div>
     <div class="contact-details reveal">
