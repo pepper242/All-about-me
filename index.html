@@ -455,6 +455,124 @@
     color: var(--sapphire);
   }
   .exp-content {}
+  
+/* ─── UNIVERSITY VIDEO GALLERY ─── */
+
+.video-work {
+  margin-top: 1.6rem;
+}
+
+.video-work-heading {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--burgundy);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--white);
+  border: 1px solid rgba(81,116,147,0.24);
+  text-decoration: none;
+  transition: border-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.video-card:hover {
+  border-color: var(--burgundy);
+  box-shadow: 0 8px 20px rgba(17,34,80,0.09);
+}
+
+.video-card:focus-visible {
+  outline: 3px solid var(--burgundy);
+  outline-offset: 3px;
+}
+
+.video-card-media {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--parchment);
+}
+
+.video-card-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-card-media img {
+  transform: scale(1.04);
+}
+
+.video-card-details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.85rem 2rem 0.9rem 0.85rem;
+  flex: 1;
+}
+
+.video-card-platform {
+  font-size: 0.58rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--sapphire);
+}
+
+.video-card-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--navy);
+}
+
+.video-card-arrow {
+  position: absolute;
+  top: 0.82rem;
+  right: 0.8rem;
+  color: var(--burgundy);
+  transition: transform 0.25s ease;
+}
+
+.video-card:hover .video-card-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .video-gallery {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-card,
+  .video-card-media img,
+  .video-card-arrow {
+    transition: none;
+  }
+
+  .video-card:hover .video-card-media img,
+  .video-card:hover .video-card-arrow {
+    transform: none;
+  }
+}
+
   .exp-role {
     font-size: 0.72rem;
     letter-spacing: 0.15em;
@@ -1090,6 +1208,104 @@
           <li>Scripted, filmed and produced promotional videos on student life for the university's international channels.</li>
           <li>Strengthened the university's digital presence and supported international student recruitment.</li>
         </ul>
+        
+<!-- UNIVERSITY PROMOTIONAL VIDEOS -->
+
+<div class="video-work">
+
+  <p class="video-work-heading">
+    Selected Video Work
+  </p>
+
+  <div class="video-gallery">
+
+    <!-- VIDEO 01: INSTAGRAM -->
+    <a
+      class="video-card"
+      href="https://www.instagram.com/huduniint/reel/DUh5lpbk8TP/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Watch Living in Huddersfield on Instagram">
+
+      <span class="video-card-media">
+        <img
+          src="huddersfield-video-01.webp"
+          alt="Living in Huddersfield promotional video"
+          loading="lazy">
+      </span>
+
+      <span class="video-card-details">
+        <span class="video-card-platform">
+          Instagram Reel
+        </span>
+        <span class="video-card-title">
+          Living in Huddersfield
+        </span>
+        <span class="video-card-arrow"
+              aria-hidden="true">↗</span>
+      </span>
+
+    </a>
+
+    <!-- VIDEO 02: INSTAGRAM -->
+    <a
+      class="video-card"
+      href="https://www.instagram.com/huduniint/reel/DL-DmmptzbF/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Watch A Day in Huddersfield on Instagram">
+
+      <span class="video-card-media">
+        <img
+          src="huddersfield-video-02.webp"
+          alt="A day in Huddersfield promotional video"
+          loading="lazy">
+      </span>
+
+      <span class="video-card-details">
+        <span class="video-card-platform">
+          Instagram Reel
+        </span>
+        <span class="video-card-title">
+          A Day in Huddersfield
+        </span>
+        <span class="video-card-arrow"
+              aria-hidden="true">↗</span>
+      </span>
+
+    </a>
+
+    <!-- VIDEO 03: YOUTUBE -->
+    <a
+      class="video-card"
+      href="https://www.youtube.com/watch?v=5R1UCtuWcXo"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Watch Studying in the UK on YouTube">
+
+      <span class="video-card-media">
+        <img
+          src="https://i.ytimg.com/vi/5R1UCtuWcXo/hqdefault.jpg"
+          alt="Studying in the UK promotional video"
+          loading="lazy">
+      </span>
+
+      <span class="video-card-details">
+        <span class="video-card-platform">
+          YouTube
+        </span>
+        <span class="video-card-title">
+          Studying in the UK
+        </span>
+        <span class="video-card-arrow"
+              aria-hidden="true">↗</span>
+      </span>
+
+    </a>
+
+  </div>
+</div>
+
       </div>
     </div>
 
