@@ -244,11 +244,17 @@
   /* ─── ABOUT ─── */
   #about { background: var(--white); }
   .about-grid {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.14fr)
+    minmax(0, 1fr);
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  align-items: start;
+}
+
+.about-text {
+  min-width: 0;
+}
   .about-text p {
     font-size: 1rem;
     line-height: 1.85;
@@ -749,7 +755,7 @@
         <span>(Frances)</span>
       </h1>
       <p class="hero-title">
-        Hospitality · Consumer · <span style="white-space: nowrap;">E-commerce</span> | From messy data to commercial decisions
+        Hospitality · Consumer · <span style="white-space: nowrap;">E-commerce</span> | AI Practitioner
       </p>
       <div class="hero-actions">
         <a href="#contact" class="hero-cta">
@@ -784,19 +790,90 @@
   <div class="about-grid reveal">
     <div class="about-text">
       <p>
-        Business Analyst with 2+ years across hospitality, consumer and e-commerce, and an MSc in
-        Business Intelligence &amp; Analytics. I clean and structure complex data, then turn it into
-        <span class="about-highlight">clear commercial recommendations</span> for senior and non-technical stakeholders.
-      </p>
-      <p>
-        At Cedar Court Hotels I built the Power BI investment case for a £320k long-stay project, estimating
-        a ~10-year payback and supporting a no-go decision with a lower-cost alternative. Most recently, as
-        Project Analyst for Bridging the Silence, I ran KPI/RAG reporting and risk control for a 9-person
-        youth mental health campaign across the UK and ASEAN.
-      </p>
+  Business Analyst with 1+ year of experience
+  supporting commercial decisions across hospitality,
+  consumer and e-commerce. I combine SQL Server,
+  Python, Power BI and Excel with AI-assisted workflows
+  using Claude Code to turn complex datasets into
+  <span class="about-highlight">
+    actionable insights for senior leadership
+  </span>.
+</p>
+
+<p>
+  I’m seeking
+  <span class="about-highlight">
+    Business Intelligence / AI Data Engineer
+  </span>
+  roles where I can combine data analytics,
+  commercial insight and AI automation to turn
+  complex datasets into something teams can act on.
+</p>
+      
       <p>
         I'm bilingual in English and Vietnamese, and I believe <span class="about-highlight">data and storytelling work best together</span>.
       </p>
+   
+<div class="featured-work">
+  <h3>Featured Work &amp; Evidence</h3>
+
+  <div class="featured-work-grid">
+
+    <div class="featured-item">
+      <div class="featured-item-title">
+        Cedar Court Hotels — Commercial Feasibility Study
+      </div>
+      <a class="evidence-link"
+         href="https://github.com/pepper242/Cedar-Court-Hotels---Long-Stay-Accommodations-Launch-Roadmap"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="evidence-pointer" aria-hidden="true">☞</span>
+        <span>Explore case study</span>
+      </a>
+    </div>
+
+    <div class="featured-item">
+      <div class="featured-item-title">
+        Global Equity Research — Stock Pitch
+      </div>
+      <a class="evidence-link"
+         href="https://github.com/pepper242/Global-Equity-Research"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="evidence-pointer" aria-hidden="true">☞</span>
+        <span>View research portfolio</span>
+      </a>
+    </div>
+
+    <div class="featured-item">
+      <div class="featured-item-title">
+        Bridging the Silence — Social Impact Project
+      </div>
+      <a class="evidence-link"
+         href="https://theprojectdarts.co.uk/events/leader-incubator-2026-finale/projects/bridge-the-silence"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="evidence-pointer" aria-hidden="true">☞</span>
+        <span>Explore campaign</span>
+      </a>
+    </div>
+
+    <div class="featured-item">
+      <div class="featured-item-title">
+        University Promotional Video
+      </div>
+      <a class="evidence-link"
+         href="https://www.youtube.com/watch?v=5R1UCtuWcXo"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="evidence-pointer" aria-hidden="true">☞</span>
+        <span>Watch my work</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+  
     </div>
     <div class="skills-panel">
       <h3>Core Skills</h3>
