@@ -573,6 +573,56 @@
   }
 }
 
+  
+/* ─── WEBSITE PREVIEW BANNERS ─── */
+
+.project-site-preview {
+  max-width: 380px;
+  margin-top: 1rem;
+}
+
+.project-site-preview .video-card-media {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--navy),
+    var(--sapphire)
+  );
+}
+
+.project-site-preview .site-preview-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  text-align: center;
+  color: var(--cream);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.project-site-preview .site-preview-placeholder small {
+  display: block;
+  color: var(--gold);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.project-site-preview .site-preview-image {
+  position: relative;
+  z-index: 1;
+}
+
+.project-site-preview .site-preview-image[hidden] {
+  display: none;
+}
+
+  
   .exp-role {
     font-size: 0.72rem;
     letter-spacing: 0.15em;
@@ -1159,6 +1209,46 @@
           <li>Worked with data scientists to integrate the GoFundMe API for live, timestamped donation tracking.</li>
         </ul>
         <a class="exp-badge" href="https://theprojectdarts.co.uk/events/leader-incubator-2026-finale/projects/bridge-the-silence" target="_blank" rel="noopener noreferrer">Leader Incubator 2026 Finale · The Project Darts</a>
+      
+<!-- PROJECT DARTS WEBSITE BANNER -->
+
+<a class="video-card project-site-preview"
+   href="https://theprojectdarts.co.uk/events/leader-incubator-2026-finale/projects/bridge-the-silence"
+   target="_blank"
+   rel="noopener noreferrer">
+
+  <span class="video-card-media">
+
+    <span class="site-preview-placeholder"
+          aria-hidden="true">
+      Bridge the Silence
+      <small>Website preview</small>
+    </span>
+
+    <img
+      class="site-preview-image"
+      src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftheprojectdarts.co.uk%2Fevents%2Fleader-incubator-2026-finale%2Fprojects%2Fbridge-the-silence?w=960"
+      alt="Bridge the Silence website preview"
+      loading="lazy"
+      decoding="async">
+
+  </span>
+
+  <span class="video-card-details">
+    <span class="video-card-platform">
+      The Project Darts · Website snapshot
+    </span>
+
+    <span class="video-card-title">
+      Leader Incubator 2026 Finale
+    </span>
+
+    <span class="video-card-arrow"
+          aria-hidden="true">↗</span>
+  </span>
+
+</a>
+
       </div>
     </div>
 
@@ -1193,6 +1283,48 @@
           <li>Built an Excel scenario model for a £4,000 annual digital budget across three locations using attributable revenue, CAC and planned ROAS, identifying the strongest market at 2.98x planned ROAS vs 1.97x overall.</li>
           <li>Built a Power BI dashboard to assess a £320k long-stay investment, estimating a ~10-year payback and supporting a no-go decision plus a lower-cost family-suite alternative.</li>
         </ul>
+        
+<!-- CEDAR COURT HOTELS BANNER -->
+
+<a class="video-card project-site-preview"
+   href="https://cedarcourthotels.co.uk/"
+   target="_blank"
+   rel="noopener noreferrer">
+
+  <span class="video-card-media">
+
+    <span class="site-preview-placeholder"
+          aria-hidden="true">
+      Cedar Court Hotels
+      <small>Website preview</small>
+    </span>
+
+    <img
+      class="site-preview-image"
+      src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fcedarcourthotels.co.uk%2F?w=960"
+      alt="Cedar Court Hotels website preview"
+      loading="lazy"
+      decoding="async">
+
+  </span>
+
+  <span class="video-card-details">
+
+    <span class="video-card-platform">
+      Cedar Court Hotels · Website snapshot
+    </span>
+
+    <span class="video-card-title">
+      Visit Cedar Court Hotels
+    </span>
+
+    <span class="video-card-arrow"
+          aria-hidden="true">↗</span>
+
+  </span>
+
+</a>
+
       </div>
     </div>
 
@@ -1323,6 +1455,47 @@
           <li>Compared channel and customer-segment performance to identify higher-value audiences.</li>
           <li>Used Google Analytics and campaign data to improve the overseas-customer journey, lifting conversion from 12.30% to 15.62% and organic traffic by 72%, contributing 25–30% of total revenue.</li>
         </ul>
+<!-- DELIA BEAUTY / DENTAL BANNER -->
+
+<a class="video-card project-site-preview"
+   href="https://nhakhoadelia.vn/"
+   target="_blank"
+   rel="noopener noreferrer">
+
+  <span class="video-card-media">
+
+    <span class="site-preview-placeholder"
+          aria-hidden="true">
+      Delia Beauty / Dental
+      <small>Website preview</small>
+    </span>
+
+    <img
+      class="site-preview-image"
+      src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnhakhoadelia.vn%2F?w=960"
+      alt="Delia Beauty and Dental website preview"
+      loading="lazy"
+      decoding="async">
+
+  </span>
+
+  <span class="video-card-details">
+
+    <span class="video-card-platform">
+      Delia Beauty / Dental · Website snapshot
+    </span>
+
+    <span class="video-card-title">
+      Visit Delia Beauty / Dental
+    </span>
+
+    <span class="video-card-arrow"
+          aria-hidden="true">↗</span>
+
+  </span>
+
+</a>
+
       </div>
     </div>
 
@@ -1504,6 +1677,22 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
+/* Website preview image fallback */
+
+document.querySelectorAll('.site-preview-image')
+  .forEach((img) => {
+
+    img.addEventListener('error', () => {
+      img.hidden = true;
+    });
+
+    if (img.complete && img.naturalWidth === 0) {
+      img.hidden = true;
+    }
+
+  });
+
+  
 </script>
 </body>
 </html>
