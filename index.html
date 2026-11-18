@@ -1626,7 +1626,7 @@
           </div>
           <div class="lang-item">
             <span class="lang-name">French</span>
-            <span class="lang-level">Basic</span>
+            <span class="lang-level">Foundation</span>
           </div>
         </div>
         <p class="lang-level lang-note"><span>Conference Interpreter</span> · <span><a href="https://www.linkedin.com/company/word4word-legal-translation-services-ltd/" target="_blank" rel="noopener noreferrer">Word4Word</a></span> · <span>Jul 2026 – present</span></p>
@@ -1674,7 +1674,20 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
+// Show the branded fallback when a screenshot fails.
+document.querySelectorAll('.site-preview-image')
+  .forEach((img) => {
 
+    img.addEventListener('error', () => {
+      img.hidden = true;
+    });
+
+    if (img.complete && img.naturalWidth === 0) {
+      img.hidden = true;
+    }
+
+  });
+ 
 /* Website preview image fallback */
 
 document.querySelectorAll('.site-preview-image')
